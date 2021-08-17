@@ -36,18 +36,42 @@ class ViewController: UIViewController {
       
    
     
-    // MARK : StoryBoard Segue
+    // MARK : StoryBoard Segue with no passin
     @objc func buttonAction(sender: UIButton!) {
         performSegue(withIdentifier: "imageResponse", sender: self)
     }
     
+    
+    
+    
     // MARK: Programmatically Segue
 
     @IBAction func papperPressed(_ sender: UIButton) {
-        print("paper pressed")
+        var contro = ImageDefined()
+        contro = storyboard?.instantiateViewController(identifier: "ImageDefined") as! ImageDefined
+        let val2 = 2
+        contro.imageSecondValue = val2
+        present(contro, animated: true, completion: nil)
+    }
+   
+    
+    // override func to Seque
+    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // let controller = segue.destination as! DiceViewController
+    // controller.firstValue = randomDiceValue()
+    // controller.secondValue = randomDiceValue()
+    
+    @IBAction func rockButton(_ sender: UIButton) {
+        
+        var controll = ImageDefined()
+        controll = storyboard?.instantiateViewController(identifier: "ImageDefined") as! ImageDefined
+        let val3 = 3
+        controll.imageThirdValue = val3
+        present(controll, animated: true, completion: nil)
     }
     
     
-
 }
+    
+
 

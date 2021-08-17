@@ -17,20 +17,20 @@ class ImageDefined : UIViewController {
     @IBOutlet weak var textReceiver: UILabel!
     @IBOutlet weak var imageReceiver: UIImageView!
     
+    
     override func viewWillAppear(_ animated: Bool) {
         
-        if imageFirstValue == self.imageFirstValue {
-            self.imageReceiver.image = #imageLiteral(resourceName: "RockCrushesScissors")
+        if let imageFirstValue = self.imageFirstValue {
+            self.imageReceiver.image = UIImage(named: "d\(imageFirstValue)")
+        } else if let imageSecondValue = self.imageSecondValue {
+            self.imageReceiver.image = UIImage(named: "d\(imageSecondValue)")
+        } else if let imageThirdValue = self.imageThirdValue {
+            self.imageReceiver.image = UIImage(named: "d\(imageThirdValue)")
         }
-        else if imageSecondValue == self.imageSecondValue {
-            self.imageReceiver.image = #imageLiteral(resourceName: "d1")
-        }
-        else {
-            self.imageReceiver.image = #imageLiteral(resourceName: "d2")
-        }
-        
         
     }
-
+    
+    
+    
     
 }
